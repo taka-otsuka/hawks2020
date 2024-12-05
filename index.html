@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="jp">
+  <head>
+    <!-- Required meta tags -->
+    <meta http-equiv="Content-type" content="text/html">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+    <meta name="description" content="">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="./CustomCSS.css" rel="stylesheet">
+    <title class="title">変更申請フォーム</title>
+
+  </head>
+  <body>
+    <!-- ロゴ -->
+    <header class="header-top">
+      <h1 class="header-logo">
+        <a href="/">
+          <svg id="logo" class="header-logo-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184 46">
+            <defs></defs>
+            <title>KINDAI UNIVERSITY</title>
+            <path class="logo-icon" d="M149.7,660.9a5.4,5.4,0,0,0-3.7-2.2,6.9,6.9,0,0,0-3.6.5,10.8,10.8,0,0,0-3.1,2.1,33,33,0,0,0-2.7,3l-1.4,1.9-.9,1.4-1,1.8-.8,1.7-1.2-.4-1.3-.7a15.3,15.3,0,0,0,2-2.8,19.7,19.7,0,0,0,1.6-3.7,23.3,23.3,0,0,0,1-5.9,9.7,9.7,0,0,0-.7-3.8,6.8,6.8,0,0,0-1.7-2.4,5.6,5.6,0,0,0-3.8-1.2,5.5,5.5,0,0,0-3.6,1.7,6.4,6.4,0,0,0-1.9,5h1.9a4.8,4.8,0,0,1,.6-2.5,4.3,4.3,0,0,1,2.8-2.1,3.4,3.4,0,0,1,3,.9c1.6,1.6,1.7,4,1.4,6.6a18,18,0,0,1-1.9,6.2,13.9,13.9,0,0,1-2.3,3.2,13.3,13.3,0,0,1-1.7-1.9,15.4,15.4,0,0,1-2.3-4.8,16.4,16.4,0,0,1-.5-3.7H122a16.5,16.5,0,0,0,3,9.3,15.3,15.3,0,0,0,1.9,2.2,15.6,15.6,0,0,1-2.4,1c-.2-.5-1.1-2.1-1.6-2.8s-1.6-2.2-2.3-3.1-2.1-2.3-2.8-3.1a15.8,15.8,0,0,0-2.1-1.6,9.2,9.2,0,0,0-2-.9,5.9,5.9,0,0,0-7.9,5.9,6,6,0,0,0,1.1,3.1,12.2,12.2,0,0,0,4.9,3.8,15.2,15.2,0,0,0,4.7,1.3,20.8,20.8,0,0,0,3.8.1,19.5,19.5,0,0,0,3.1-.4,15.3,15.3,0,0,1,.7,2.1,13.9,13.9,0,0,1,.3,2.2,17.4,17.4,0,0,0-5.7,2,26.5,26.5,0,0,0-4.5,3.5,12.6,12.6,0,0,0-2.8,3.8,8.3,8.3,0,0,0-.6,2.9A5.9,5.9,0,0,0,114,695c1.8.9,4.2.8,6.5-.9a12.3,12.3,0,0,0,4.2-5.5,21.9,21.9,0,0,0,1.4-5.3,30.7,30.7,0,0,0,.2-3.8,27.8,27.8,0,0,1,4.7-.1,29.2,29.2,0,0,0,.4,3.9,21.2,21.2,0,0,0,1.6,5.1,13.2,13.2,0,0,0,3.7,4.8,7.4,7.4,0,0,0,4.4,1.8,5.4,5.4,0,0,0,3.7-1.2,6,6,0,0,0,2-3.9,7,7,0,0,0-1.1-4.5,16,16,0,0,0-3.3-3.5,20.8,20.8,0,0,0-3.7-2.5,18.9,18.9,0,0,0-5.7-1.7,17.2,17.2,0,0,1,.8-4.3l2.8.3a18.7,18.7,0,0,0,5.1-.5,15.3,15.3,0,0,0,4.1-1.6,12.6,12.6,0,0,0,3.2-2.4,7.2,7.2,0,0,0,1.8-3,5.9,5.9,0,0,0-1.1-5.2m-30.4,11.2a14.4,14.4,0,0,1-7.5-1.6,9.4,9.4,0,0,1-3.7-3.3,3.8,3.8,0,0,1-.4-2.7,4.5,4.5,0,0,1,1.5-2.4c1.8-1.3,3.6-.8,5.3,0s3.7,3.3,5,4.7a26.1,26.1,0,0,1,3.2,4.9,16.5,16.5,0,0,1-3.2.4m4.8,11.8a16.4,16.4,0,0,1-1.7,5.2c-1.1,1.8-2.5,3.8-4.8,4.4a3.6,3.6,0,0,1-4.8-2.8c-.7-2.4,1.2-4.7,2.3-5.7a20.2,20.2,0,0,1,4.4-3.5,14.1,14.1,0,0,1,4.9-1.7,23.6,23.6,0,0,1-.3,4.2m6.9-6.4a42.3,42.3,0,0,0-4.8.1,20.4,20.4,0,0,0-1-4.5,12.3,12.3,0,0,0,3.3-1.6,11.9,11.9,0,0,0,3.4,1.6,22.3,22.3,0,0,0-.8,4.5m7.3,3.9A22.8,22.8,0,0,1,143,685a6.9,6.9,0,0,1,1.9,3.4,4.5,4.5,0,0,1-.7,3.3,3.4,3.4,0,0,1-3.1,1.5,6.6,6.6,0,0,1-4.3-2.3,12.3,12.3,0,0,1-2.8-4.7,20.1,20.1,0,0,1-1.1-6.5,17.1,17.1,0,0,1,5.5,1.8m7.1-11.8a15.1,15.1,0,0,1-6.9,2.2,16.7,16.7,0,0,1-4.2-.2,25.9,25.9,0,0,1,2.7-4.8l2.4-3a12.1,12.1,0,0,1,2.1-2,5.8,5.8,0,0,1,3.9-1.3,3.5,3.5,0,0,1,2.7,1.5,4.6,4.6,0,0,1,.9,2.2c.1,2-1.1,3.7-3.6,5.3" transform="translate(-105.8 -649.7)"></path><polygon class="cls-1" points="55.9 0 61.4 0 61.4 11 71.6 0 78.8 0 67.9 10.9 79.4 26.6 72.2 26.6 64 15 61.4 17.7 61.4 26.6 55.9 26.6 55.9 0"></polygon><rect class="cls-1" x="84.1" width="5.5" height="26.58"></rect><polygon class="cls-1" points="96.5 0 102.3 0 112.9 18.5 112.9 0 118.1 0 118.1 26.6 112.5 26.6 101.7 7.7 101.7 26.6 96.5 26.6 96.5 0"></polygon><path class="cls-1" d="M246.3,650.3a8.8,8.8,0,0,1,4.5,3.4,11.8,11.8,0,0,1,1.9,4.3,20.6,20.6,0,0,1,.5,4.4,17.7,17.7,0,0,1-2.1,9,9.6,9.6,0,0,1-8.9,5H230.7V649.7h11.5a14,14,0,0,1,4.1.6m-10.2,4v17.4h5.1a5.5,5.5,0,0,0,5.5-3.9,13.6,13.6,0,0,0,.8-5.1,12.5,12.5,0,0,0-1.3-6.2q-1.3-2.2-5.1-2.2Z" transform="translate(-105.8 -649.7)"></path><path class="cls-1" d="M264.3,649.7h6.3l9.4,26.6h-6l-1.8-5.5h-9.8l-1.8,5.5h-5.8Zm-.4,16.5h6.8l-3.4-10.5Z" transform="translate(-105.8 -649.7)"></path><rect class="cls-1" x="178.5" width="5.5" height="26.58"></rect><path class="cls-1" d="M161.6,683.2h2.6v7.5a4.2,4.2,0,0,0,.3,1.8,2.5,2.5,0,0,0,4,0,4.2,4.2,0,0,0,.3-1.8v-7.5h2.6v7.5a6.3,6.3,0,0,1-.6,3q-1.1,2-4.3,2t-4.3-2a6.3,6.3,0,0,1-.6-3Z" transform="translate(-105.8 -649.7)"></path><polygon class="cls-1" points="71.1 33.4 73.7 33.4 78.6 41.9 78.6 33.4 81 33.4 81 45.6 78.4 45.6 73.4 37 73.4 45.6 71.1 45.6 71.1 33.4"></polygon><rect class="cls-1" x="86.8" y="33.4" width="2.5" height="12.25"></rect><polygon class="cls-1" points="102.1 33.4 104.7 33.4 100.6 45.6 98.1 45.6 94 33.4 96.7 33.4 99.4 42.7 102.1 33.4"></polygon><polygon class="cls-1" points="117.8 35.6 111.3 35.6 111.3 38.2 117.3 38.2 117.3 40.3 111.3 40.3 111.3 43.4 118.1 43.4 118.1 45.6 108.8 45.6 108.8 33.4 117.8 33.4 117.8 35.6"></polygon><path class="cls-1" d="M236.7,683.5a3,3,0,0,1,1.1.9,3.8,3.8,0,0,1,.6,1,3.4,3.4,0,0,1,.2,1.3,3.7,3.7,0,0,1-.4,1.7,2.5,2.5,0,0,1-1.5,1.2,2.3,2.3,0,0,1,1.2,1,4,4,0,0,1,.4,1.9v.8a6.2,6.2,0,0,0,.1,1.1,1,1,0,0,0,.5.7v.3H236l-.2-.7a6,6,0,0,1-.1-1.1v-1.1a2.3,2.3,0,0,0-.4-1.6,2.1,2.1,0,0,0-1.5-.4h-2.5v4.8h-2.5V683.2h5.9a5.4,5.4,0,0,1,1.9.3m-5.3,1.8v3.3h2.8l1.2-.2a1.4,1.4,0,0,0,.7-1.4,1.5,1.5,0,0,0-.7-1.5l-1.2-.2Z" transform="translate(-105.8 -649.7)"></path><path class="cls-1" d="M246,691.6a2.5,2.5,0,0,0,.5,1.3,2.7,2.7,0,0,0,2.2.8l1.5-.2a1.4,1.4,0,0,0,1.1-1.4,1,1,0,0,0-.5-.9l-1.7-.6-1.3-.3a8.3,8.3,0,0,1-2.7-.9,3,3,0,0,1-1.2-2.6,3.5,3.5,0,0,1,1.2-2.7,5.2,5.2,0,0,1,3.6-1.1,5.5,5.5,0,0,1,3.3,1,3.6,3.6,0,0,1,1.5,3h-2.5a1.8,1.8,0,0,0-1-1.6,3.4,3.4,0,0,0-1.5-.3,2.9,2.9,0,0,0-1.6.4,1.3,1.3,0,0,0-.6,1.1,1.1,1.1,0,0,0,.6,1l1.6.5,2.1.5a5.4,5.4,0,0,1,2.1.9,3,3,0,0,1,1.1,2.5,3.5,3.5,0,0,1-1.3,2.8,5.5,5.5,0,0,1-3.7,1.1,6,6,0,0,1-3.8-1.1,3.6,3.6,0,0,1-1.4-3Z" transform="translate(-105.8 -649.7)"></path><rect class="cls-1" x="152.9" y="33.4" width="2.5" height="12.25"></rect><polygon class="cls-1" points="169.8 33.4 169.8 35.6 166.1 35.6 166.1 45.6 163.5 45.6 163.5 35.6 159.8 35.6 159.8 33.4 169.8 33.4"></polygon><polygon class="cls-1" points="181.1 33.4 184 33.4 179.9 41.1 179.9 45.6 177.3 45.6 177.3 41.1 173.1 33.4 176.1 33.4 178.7 38.7 181.1 33.4"></polygon>
+          </svg>
+        </a>
+      </h1>
+    </header>
+
+    <div class="container-fluid">
+      <div class="justify-content-center py-5">
+        <form id="form" name="form" class="justify-content-center needs-validation" action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" novalidate>
+          <!--入力画面-->
+          
+          <div id="inputView" class="row collapse show">
+            <div class="pt-4">
+              <div class="col-12 text-center py-1 h1 fw-bold index-l">変更申請フォーム</div>
+            </div>
+
+            <div class="pt-4"></div>
+            <div class="col-12">
+              <div class="inline-border">
+                <div class="fw-bold">
+                  申請内容
+                  <span class="badge bg-danger">必須</span>
+                </div>
+                <div class="py-2 position-relative">
+                  <Select id="ChangeContent" class="form-select" required>
+                    <option label="---申請内容を選択してください---" checked></option>
+                    <option>氏名・住所等変更（勤務先含む）</option>
+                    <option>物故</option>
+                  </Select>
+                  <!--バリデーションエラー表示-->
+                  <div class="invalid-feedback" title="申請内容:"></div>
+                </div>
+                <div class="fw-bold ">送付物</div>
+                <div class="position-relative py-2">
+                  <select id="SendingProduct" class="form-select">
+                    <option checked>送付物必要</option>
+                    <option>送付物不要</option>
+                  </select>
+                  <!--バリデーションエラー表示-->
+                  <div class="invalid-feedback" title="送付物:"></div>
+                </div>
+                <div class="non-send collapse show">
+                  <div class="fw-bold ">送付希望先</div>
+                  <div class="position-relative py-2">
+                    <select id="DestinationHopeName" class="form-select">
+                      <option checked>現住所</option>
+                      <option>勤務先</option>
+                    </select>
+                    <!--バリデーションエラー表示-->
+                    <div class="invalid-feedback" title="送付希望先:"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4"></div>
+            <div class="col-12">
+              <div class="index-m">
+                校友番号
+                <span class="badge bg-danger">必須</span>
+                （3・4・5のいずれかから始まる13桁の番号）
+              </div>
+              <div class="col-12 input-group position-relative py-1">
+                <input id="AlumnusNumber_1" class="form-control long ime-off" type="tel" inputmode="tel" onfocus="this.select();" oninput="this.value=toHanKaku(this.value)" placeholder="XXX" minlength="3" maxlength="3" pattern="^[0-9]{3}$" required/>
+                <span class="input-group-text px-1">-</span>
+                <input id="AlumnusNumber_2" class="form-control long ime-off" type="tel" inputmode="tel" onfocus="this.select();" oninput="this.value=toHanKaku(this.value)" placeholder="XX" minlength="2" maxlength="2" pattern="^[0-9]{2}$" required/>
+                <span class="input-group-text px-1">-</span>
+                <input id="AlumnusNumber_3" class="form-control long ime-off" type="tel" inputmode="tel" onfocus="this.select();" oninput="this.value=toHanKaku(this.value)" placeholder="XXX" minlength="3" maxlength="3" pattern="^[0-9]{3}$" required/>
+                <span class="input-group-text px-1">-</span>
+                <input id="AlumnusNumber_4" class="form-control short ime-off" type="tel" inputmode="tel" onfocus="this.select();" oninput="this.value=toHanKaku(this.value)" placeholder="X" minlength="1" maxlength="1" pattern="^[0-9]{1}$" required/>
+                <span class="input-group-text px-1">-</span>
+                <input id="AlumnusNumber_5" class="form-control long ime-off" type="tel" inputmode="tel" onfocus="this.select();" oninput="this.value=toHanKaku(this.value)" placeholder="XXXX" minlength="4" maxlength="4" pattern="^[0-9]{4}$" required/>
+                <!--非表示項目-->
+                <input id="AlumnusNumber" class="form-control" type=hidden />
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="校友番号:"></div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-offset-1">
+              <div class="index-m">
+                卒業学部
+                <span class="badge bg-danger">必須</span>
+              </div>
+              <div class="position-relative py-1">
+                <select id="FacultyName" class="form-select" required/>
+                  <option label="---学部---"></option>
+                  <option>法学部</option>
+                  <option>商経学部</option>
+                  <option>経済学部</option>
+                  <option>経営学部</option>
+                  <option>理工学部</option>
+                  <option>建築学部</option>
+                  <option>薬学部</option>
+                  <option>文芸学部</option>
+                  <option>総合社会学部</option>
+                  <option>国際学部</option>
+                  <option>大学院</option>
+                  <option>法科大学院</option>
+                  <option>短期大学部</option>
+                  <option>通信教育部</option>
+                  <option>農学部</option>
+                  <option>医学部</option>
+                  <option>生物理工学部</option>
+                  <option>工学部</option>
+                  <option>産業理工学部</option>
+                  <option>九州短期大学</option>
+                  <option>九州短期大学通信教育部</option>
+                  <option>工業高等専門学校</option>
+                  <option>大阪専門学校</option>
+                  <option>大阪理工科大学</option>
+                  <option>豊岡短期大学</option>
+                  <option>豊岡短期大学通信教育部</option>
+                  <option>青踏女子短期大学</option>
+                  <option>熊野工業高等専門学校</option>
+                  <option>附属高等看護学校</option>
+                  <option>附属看護専門学校</option>
+                </select>
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="卒業学部:"></div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-offset-1">
+              <div class="px-1 py-1 index-m">
+                卒業年
+                <span class="badge bg-danger">必須</span>
+              </div>
+              <div class="input-group position-relative py-1" id="sotugyougr">
+                <select id="input_graduation_gengou" class="form-select long" required>
+                  <option label="---元号---"></option>
+                  <option>令和</option>
+                  <option>平成</option>
+                  <option>昭和</option>
+                  <option>大正</option>
+                </select>
+                <input id="input_graduation_year" class="form-control short" type="tel" inputmode="tel" onblur="this.value=toHanKaku(this.value);this.value=zeroPadding(this.value,2)" placeholder="XX" maxlength="2" pattern="(?!^00$)(?!^0$)^[0-9]{2}$" required/>
+                <span class="input-group-text">年</span>
+                <!--非表示項目-->
+                <input id="GraduationYears" class="form-control" type=hidden />
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="卒業年:"></div>
+              </div>
+            </div>
+            
+            <div class="col-12">
+              <div class="px-1 py-1 index-m">
+                生年月日（西暦）
+                <span class="badge bg-danger">必須</span>
+              </div>
+              <div class="input-group position-relative py-1">
+                <input id="birthday_1" class="form-control long ime-off" type="tel" inputmode="tel" onfocus="this.select();" onblur="this.value=toHanKaku(this.value)" placeholder="XXXX" minlength="4" maxlength="4" pattern="(?!^0000$)^[0-9]{4}$" required />
+                <span class="input-group-text">年</span>
+                <input id="birthday_2" class="form-control short ime-off" type="tel" inputmode="tel" onfocus="this.select();" onblur="this.value=toHanKaku(this.value);this.value=zeroPadding(this.value,2)" placeholder="XX" maxlength="2" pattern="(?!^00$)^[0-9]{2}$" required />
+                <span class="input-group-text">月</span>
+                <input id="birthday_3" class="form-control short ime-off" type="tel" inputmode="tel" onfocus="this.select();" onblur="this.value=toHanKaku(this.value);this.value=zeroPadding(this.value,2)" placeholder="XX" maxlength="2" pattern="(?!^00$)^[0-9]{2}$" required />
+                <span class="input-group-text">日</span>
+                <!--非表示項目-->
+                <input id="Birthday" class="form-control" type=hidden />
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="生年月日:"></div>
+              </div>
+            </div>
+
+            <div class="pt-4"></div>
+            <div class="col-12">
+              <div class="px-1 py-1 index-m">
+                氏名
+                <span class="badge bg-danger">必須</span>
+              </div>
+              <div class="input-group position-relative py-1">
+                <input id="last_name" name="last_name" class="form-control long" type="text" placeholder="姓" maxlength="80" required/>
+                <input id="first_name" name="first_name" class="form-control long" type="text" placeholder="名" maxlength="40" required/>
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="氏名:" ></div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="px-1 py-1 index-m">
+                フリガナ
+                <span class="badge bg-danger">必須</span>
+              </div>
+              <div class="input-group position-relative py-1">
+                <input id="last_name_kana" class="form-control long" type="text" onblur="this.value=ZKtoHK(this.value)" placeholder="セイ" pattern="^[ｦ-ﾟ]+$" required/>
+                <input id="first_name_kana" class="form-control long" type="text" onblur="this.value=ZKtoHK(this.value)" placeholder="メイ" pattern="^[ｦ-ﾟ]+$"required/>
+                <!--非表示項目-->
+                <input id="Name_Kana" type=hidden maxLength="255" class="form-control" />
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="フリガナ:"></div>
+              </div>
+            </div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                旧姓（変更の方のみご記入ください）
+              </div>
+              <div class="position-relative py-1">
+                <input id="OldLastName" class="form-control" type="text" maxlength="255" placeholder="姓" />
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="旧姓:"></div>
+              </div>
+            </div>
+
+            <div class="pt-4 non-bukk collapse showo"></div>
+            <div class="col-sm-6 col-md-offset-1 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                電話番号
+              </div>
+              <div class="input-group position-relative py-1">
+                <input id="phone_1" name="phone_1" class="form-control ime-off" type="text" oninput="this.value=toHanKaku(this.value);phone.value=[phone_1.value,phone_2.value,phone_3.value].filter(Boolean).join('-')" pattern="^[0-9\-+*#;,]{0,}$"/>
+                <span class="input-group-text">-</span>
+                <input id="phone_2" name="phone_2" class="form-control ime-off" type="text" oninput="this.value=toHanKaku(this.value);phone.value=[phone_1.value,phone_2.value,phone_3.value].filter(Boolean).join('-')" pattern="^[0-9\-+*#;,]{0,}$"/>
+                <span class="input-group-text">-</span>
+                <input id="phone_3" name="phone_3" class="form-control ime-off" type="text" oninput="this.value=toHanKaku(this.value);phone.value=[phone_1.value,phone_2.value,phone_3.value].filter(Boolean).join('-')" pattern="^[0-9\-+*#;,]{0,}$"/>
+                <!--非表示項目-->
+                <input id="phone" name="phone" class="form-control" type="text" maxlength="40" pattern=".{0,40}" hidden />
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="電話番号:"></div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-offset-1 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                携帯電話番号
+              </div>
+              <div class="input-group position-relative py-1">
+                <input id="mobile_1" name="mobile_1" class="form-control ime-off" type="text" oninput="this.value=toHanKaku(this.value);mobile.value=[mobile_1.value,mobile_2.value,mobile_3.value].filter(Boolean).join('-')" pattern="^[0-9\-+*#;,]{0,}$"/>
+                <span class="input-group-text">-</span>
+                <input id="mobile_2" name="mobile_2" class="form-control ime-off" type="text" oninput="this.value=toHanKaku(this.value);mobile.value=[mobile_1.value,mobile_2.value,mobile_3.value].filter(Boolean).join('-')" pattern="^[0-9\-+*#;,]{0,}$"/>
+                <span class="input-group-text">-</span>
+                <input id="mobile_3" name="mobile_3" class="form-control ime-off" type="text" oninput="this.value=toHanKaku(this.value);mobile.value=[mobile_1.value,mobile_2.value,mobile_3.value].filter(Boolean).join('-')" pattern="^[0-9\-+*#;,]{0,}$"/>
+                <!--非表示項目-->
+                <input id="mobile" name="mobile" class="form-control" type="text" maxlength="40" pattern=".{0,40}" hidden />
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="携帯電話:"></div>
+              </div>
+            </div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                メール
+              </div>
+              <div class="position-relative py-1">
+                <input id="EmailAddress" class="form-control ime-off" type="email" onblur="this.value=toHanKaku(this.value)" maxlength="80" pattern="^(?=^[a-zA-Z0-9!#$%&'*/=?\^_+\-`{|}~][a-zA-Z0-9.!#$%&'*/=?\^_+\-`{|}~]*@[a-zA-Z0-9]([-.]?[a-zA-Z0-9])*\.[a-zA-Z0-9]{2,4}$).{0,80}$"/>
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="メール:"></div>
+              </div>
+            </div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                郵便番号
+              </div>
+              <div class="input-group position-relative py-1">
+                <input id="zip_1" name="zip_1" class="form-control ime-off" type="text" inputmode="email" onblur="this.value=toHanKaku(this.value);AjaxZip3.zip2addr(this, 'zip_2', 'state', 'city', 'street');" maxlength="9" pattern="^.{0,9}$"/>
+                <span class="input-group-text">-</span>
+                <input id="zip_2" name="zip_2" class="form-control ime-off" type="text" inputmode="email" onblur="this.value=toHanKaku(this.value);AjaxZip3.zip2addr('zip_1', this, 'state', 'city', 'street');" maxlength="9" pattern="^.{0,9}$"/>
+                <!--非表示項目-->
+                <input id="zip" name="zip" class="form-control" type=hidden />
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="郵便番号:"></div>
+              </div>
+            </div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                都道府県
+              </div>
+              <div class="position-relative py-1">
+                <input id="state" name="state" class="form-control" type="text" onblur="this.value=convAddress(this.value)" maxlength="20" pattern="^.{0,20}$"/>
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="都道府県:"></div>
+              </div>
+            </div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                市区郡
+              </div>
+              <div class="position-relative py-1">
+                <input id="city" name="city" class="form-control" type="text" onblur="this.value=convAddress(this.value)" maxlength="40" pattern="^.{0,40}$"/>
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="市区郡:"></div>
+              </div>
+            </div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                町名
+              </div>
+              <div class="position-relative py-1">
+                <input id="street" name="street" class="form-control" type="text" onblur="this.value=convAddress(this.value)" maxlength="255" pattern="^.{0,255}$"/>
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="町名:"></div>
+              </div>
+            </div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                番地
+              </div>
+              <div class="position-relative py-1">
+                <input id="CurrentAddress04" class="form-control" type="text" onblur="this.value=convAddress(this.value)" maxlength="255" pattern="^.{0,255}$"/>
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="番地:"></div>
+              </div>
+            </div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                マンション名・その他
+              </div>
+              <div class="position-relative py-1">
+                <input id="CurrentAddress05" class="form-control" type="text" onblur="this.value=convAddress(this.value)" maxlength="255" pattern="^.{0,255}$"/>
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="マンション名・その他:"></div>
+              </div>
+            </div>
+            <div class="pt-4 non-bukko collapse show"></div>
+            <div class="non-bukko collapse show index-m">送付先を勤務先とされる方、勤務先に変更がある方は勤務先情報を入力してください。</div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                勤務先名
+              </div>
+              <div class="position-relative py-1">
+                <input id="CurrentOfficeCorporateName" class="form-control" type="text" maxlength="255" />
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="勤務先名:"></div>
+              </div>
+            </div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                役職
+              </div>
+              <div class="position-relative py-1">
+                <input id="title" name="title" class="form-control" type="text" maxlength="40" />
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="役職:"></div>
+              </div>
+            </div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                郵便番号
+              </div>
+              <div class="input-group position-relative py-1">
+                <input id="CurrentOfficePostalCode_1" name="CurrentOfficePostalCode_1" class="form-control" type="text" inputmode="email" onblur="this.value=toHanKaku(this.value);AjaxZip3.zip2addr(this, 'CurrentOfficePostalCode_2', 'pref02', 'addr02', 'strt02');" maxlength="9" pattern="^.{0,9}$"/>
+                <span class="input-group-text">-</span>
+                <input id="CurrentOfficePostalCode_2" name="CurrentOfficePostalCode_2" class="form-control" type="text" inputmode="email" onblur="this.value=toHanKaku(this.value);AjaxZip3.zip2addr('CurrentOfficePostalCode_1', this, 'pref02', 'addr02', 'strt02');" maxlength="9" pattern="^.{0,9}$"/>
+                <!--非表示項目-->
+                <input id="CurrentOfficePostalCode" class="form-control" type=hidden />
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="郵便番号:"></div>
+              </div>
+            </div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                都道府県
+              </div>
+              <div class="position-relative py-1">
+                <input id="CurrentOfficeAddress01" name="pref02" class="form-control" type="text" onblur="this.value=convAddress(this.value)" maxlength="255" pattern="^.{0,255}$"/>
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="都道府県:"></div>
+              </div>
+            </div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                市区郡
+              </div>
+              <div class="position-relative py-1">
+                <input id="CurrentOfficeAddress02" name="addr02" class="form-control" type="text" onblur="this.value=convAddress(this.value)" maxlength="255" pattern="^.{0,255}$"/>
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="市区郡:"></div>
+              </div>
+            </div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                町名
+              </div>
+              <div class="position-relative py-1">
+                <input id="CurrentOfficeAddress03" name="strt02" class="form-control" type="text" onblur="this.value=convAddress(this.value)" maxlength="255" pattern="^.{0,255}$"/>
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="町名:"></div>
+              </div>
+            </div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                番地
+              </div>
+              <div class="position-relative py-1">
+                <input id="CurrentOfficeAddress04" class="form-control" type="text" onblur="this.value=convAddress(this.value)" maxlength="255" pattern="^.{0,255}$"/>
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="番地:"></div>
+              </div>
+            </div>
+            <div class="col-12 non-bukko collapse show">
+              <div class="px-1 py-1 index-m">
+                建物名・その他
+              </div>
+              <div class="position-relative py-1">
+                <input id="CurrentOfficeAddress05" class="form-control" type="text" onblur="this.value=convAddress(this.value)" maxlength="255" pattern="^.{0,255}$"/>
+                <!--バリデーションエラー表示-->
+                <div class="invalid-feedback" title="建物名・その他:"></div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="inline-border mt-4">
+                <div class="fw-bold ">個人情報の公開</div>
+                <div class="position-relative py-2">
+                  <select id="InfoProvisionToKouyu" class="form-select">
+                    <option checked>校友会への情報提供に承諾します</option>
+                    <option>校友会への情報提供に承諾しない</option>
+                  </select>
+                  <!--バリデーションエラー表示-->
+                  <div class="invalid-feedback" title="校友会への情報提供:"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-6 text-center">
+                <button id="inputCheckButton" class="btn btn-dark btn-submit" type="button">送信内容確認</button>
+              </div>
+              <div class="col-6 text-center">
+                <button class="btn btn-outline-dark" onclick="location.reload()" type="button">クリア</button>
+              </div>
+            </div>
+          </div>
+          <!--確認画面-->
+          <div id="verificationView" name="verificationView" class="collapse">
+
+            <div class="pt-4">
+              <div class="text-center py-1 h1 fw-bold index-l">入力内容確認</div>
+            </div>
+            <div class="pt-5 col-12">
+              <table class="table table-bordered">
+                  <tr>
+                    <td style="min-width:25%;" class="index-m"><span class="badge bg-danger">必須</span>　変更内容</td>
+                    <td class="w-50"><span id="OutputChangeContent"></span></td>
+                  </tr>
+                  <tr>
+                    <td class="index-m">送付物</td>
+                    <td>
+                      <span id="OutputSendingProduct"></span>
+                    </td>
+                  </tr>
+                  <tr class="non-send collapse show">
+                    <td class="index-m">送付希望先</td>
+                    <td>
+                      <span id="OutputDestinationHopeName"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="index-m"><span class="badge bg-danger">必須</span>　校友番号</td>
+                    <td><span id="OutputAlumnusNumber"></span></td>
+                  </tr>
+                  <tr>
+                    <td class="index-m"><span class="badge bg-danger">必須</span>　卒業学部</td>
+                    <td><span id="OutputFacultyName"></span></td>
+                  </tr>
+                  <tr>
+                    <td class="index-m"><span class="badge bg-danger">必須</span>　卒業年</td>
+                    <td><span id="OutputGraduationYears"></span></td>
+                  </tr>
+                  <tr>
+                    <td class="index-m"><span class="badge bg-danger">必須</span>　生年月日（西暦）</td>
+                    <td><span id="Outputbirthday_1"></span>年<span id="Outputbirthday_2"></span>月<span id="Outputbirthday_3"></span>日</td>
+                  </tr>
+                  <tr>
+                    <td class="index-m"><span class="badge bg-danger">必須</span>　氏名</td>
+                    <td><span id="Outputlast_name"></span> <span id="Outputfirst_name"></span></td>
+                  </tr>
+                  <tr>
+                    <td class="index-m"><span class="badge bg-danger">必須</span>　フリガナ</td>
+                    <td><span id="Outputlast_name_kana"></span> <span id="Outputfirst_name_kana"></span></td>
+                  </tr>
+                  <tr class="non-bukko collapse show">
+                    <td class="index-m">旧姓（変更の方のみご記入ください）</td>
+                    <td><span id="OutputOldLastName"></span></td>
+                  </tr>
+                  <tr class="non-bukko collapse show">
+                    <td class="index-m">電話番号（ハイフンあり）</td>
+                    <td><span id="Outputphone"></span></td>
+                  </tr>
+                  <tr class="non-bukko collapse show">
+                    <td class="index-m">携帯電話番号（ハイフンあり）</td>
+                    <td><span id="Outputmobile"></span></td>
+                  </tr>
+                  <tr class="non-bukko collapse show">
+                    <td class="index-m">メール</td>
+                    <td><span id="OutputEmailAddress"></span></td>
+                  </tr>
+                  <tr class="non-bukko collapse show">
+                    <td class="index-m">住所</td>
+                    <td>
+                      <div id="OutputAddress" class="collapse show">
+                        〒<span id="Outputzip"></span><br />
+                        <span id="Outputstate"></span>
+                        <span id="Outputcity"></span>
+                        <span id="Outputstreet"></span>
+                        <span id="OutputCurrentAddress04"></span>
+                        <span id="OutputCurrentAddress05"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="non-bukko collapse show">
+                    <td class="index-m">勤務先名</td>
+                    <td><span id="OutputCurrentOfficeCorporateName"></span></td>
+                  </tr>
+                  <tr class="non-bukko collapse show">
+                    <td class="index-m">役職</td>
+                    <td><span id="Outputtitle"></span></td>
+                  </tr>
+                  <tr class="non-bukko collapse show">
+                    <td class="index-m">勤務先住所</td>
+                    <td>
+                      <div id="OutputWoAddress"class="collapse show">
+                        〒<span id="OutputCurrentOfficePostalCode"></span><br />
+                        <span id="OutputCurrentOfficeAddress01"></span>
+                        <span id="OutputCurrentOfficeAddress02"></span>
+                        <span id="OutputCurrentOfficeAddress03"></span>
+                        <span id="OutputCurrentOfficeAddress04"></span>
+                        <span id="OutputCurrentOfficeAddress05"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="index-m">個人情報の公開</td>
+                    <td>
+                      <span id="OutputInfoProvisionToKouyu"></span>
+                    </td>
+                  </tr>
+              </table>
+            </div>
+            <div class="row mt-5">
+              <div class="col-6 text-center">
+                <button id="submitButton" class="btn btn-dark submit-button" type="button">送信</button>
+              </div>
+              <div class="col-6 text-center">
+                <button class="btn btn-outline-dark" onclick="verificationView.classList.remove('show');inputView.classList.add('show');window.scrollTo({top:0,left:0,behavior:'instant'});" type="button">送信内容を修正する</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="./FormJS.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+  </main>
+  </body>
+</html>
