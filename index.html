@@ -84,15 +84,15 @@
                 （3・4・5のいずれかから始まる13桁の番号）
               </div>
               <div class="col-12 input-group position-relative py-1">
-                <input id="AlumnusNumber_1" class="form-control long ime-off" type="tel" inputmode="tel" onfocus="this.select();" oninput="this.value=toHanKaku(this.value)" placeholder="XXX" minlength="3" maxlength="3" pattern="^[0-9]{3}$" required/>
+                <input id="AlumnusNumber_1" class="form-control long ime-off" type="tel" inputmode="tel" onfocus="this.select();" oninput="this.value=toHanKaku(this.value)" placeholder="300" minlength="3" maxlength="3" pattern="^[0-9]{3}$" required/>
                 <span class="input-group-text px-1">-</span>
-                <input id="AlumnusNumber_2" class="form-control long ime-off" type="tel" inputmode="tel" onfocus="this.select();" oninput="this.value=toHanKaku(this.value)" placeholder="XX" minlength="2" maxlength="2" pattern="^[0-9]{2}$" required/>
+                <input id="AlumnusNumber_2" class="form-control long ime-off" type="tel" inputmode="tel" onfocus="this.select();" oninput="this.value=toHanKaku(this.value)" placeholder="00" minlength="2" maxlength="2" pattern="^[0-9]{2}$" required/>
                 <span class="input-group-text px-1">-</span>
-                <input id="AlumnusNumber_3" class="form-control long ime-off" type="tel" inputmode="tel" onfocus="this.select();" oninput="this.value=toHanKaku(this.value)" placeholder="XXX" minlength="3" maxlength="3" pattern="^[0-9]{3}$" required/>
+                <input id="AlumnusNumber_3" class="form-control long ime-off" type="tel" inputmode="tel" onfocus="this.select();" oninput="this.value=toHanKaku(this.value)" placeholder="000" minlength="3" maxlength="3" pattern="^[0-9]{3}$" required/>
                 <span class="input-group-text px-1">-</span>
-                <input id="AlumnusNumber_4" class="form-control short ime-off" type="tel" inputmode="tel" onfocus="this.select();" oninput="this.value=toHanKaku(this.value)" placeholder="X" minlength="1" maxlength="1" pattern="^[0-9]{1}$" required/>
+                <input id="AlumnusNumber_4" class="form-control short ime-off" type="tel" inputmode="tel" onfocus="this.select();" oninput="this.value=toHanKaku(this.value)" placeholder="0" minlength="1" maxlength="1" pattern="^[0-9]{1}$" required/>
                 <span class="input-group-text px-1">-</span>
-                <input id="AlumnusNumber_5" class="form-control long ime-off" type="tel" inputmode="tel" onfocus="this.select();" oninput="this.value=toHanKaku(this.value)" placeholder="XXXX" minlength="4" maxlength="4" pattern="^[0-9]{4}$" required/>
+                <input id="AlumnusNumber_5" class="form-control long ime-off" type="tel" inputmode="tel" onfocus="this.select();" oninput="this.value=toHanKaku(this.value)" placeholder="0000" minlength="4" maxlength="4" pattern="^[0-9]{4}$" required/>
                 <!--非表示項目-->
                 <input id="AlumnusNumber" class="form-control" type=hidden />
                 <!--バリデーションエラー表示-->
@@ -155,7 +155,7 @@
                   <option>昭和</option>
                   <option>大正</option>
                 </select>
-                <input id="input_graduation_year" class="form-control short" type="tel" inputmode="tel" onblur="this.value=toHanKaku(this.value);this.value=zeroPadding(this.value,2)" placeholder="XX" maxlength="2" pattern="(?!^00$)(?!^0$)^[0-9]{2}$" required/>
+                <input id="input_graduation_year" class="form-control short" type="tel" inputmode="tel" onblur="this.value=toHanKaku(this.value);this.value=zeroPadding(this.value,2)" placeholder="01" maxlength="2" pattern="(?!^00$)(?!^0$)^[0-9]{2}$" required/>
                 <span class="input-group-text">年</span>
                 <!--非表示項目-->
                 <input id="GraduationYears" class="form-control" type=hidden />
@@ -170,11 +170,11 @@
                 <span class="badge bg-danger">必須</span>
               </div>
               <div class="input-group position-relative py-1">
-                <input id="birthday_1" class="form-control long ime-off" type="tel" inputmode="tel" onfocus="this.select();" onblur="this.value=toHanKaku(this.value)" placeholder="XXXX" minlength="4" maxlength="4" pattern="(?!^0000$)^[0-9]{4}$" required />
+                <input id="birthday_1" class="form-control long ime-off" type="tel" inputmode="tel" onfocus="this.select();" onblur="this.value=toHanKaku(this.value)" placeholder="1900" minlength="4" maxlength="4" pattern="(?!^0000$)^[0-9]{4}$" required />
                 <span class="input-group-text">年</span>
-                <input id="birthday_2" class="form-control short ime-off" type="tel" inputmode="tel" onfocus="this.select();" onblur="this.value=toHanKaku(this.value);this.value=zeroPadding(this.value,2)" placeholder="XX" maxlength="2" pattern="(?!^00$)^[0-9]{2}$" required />
+                <input id="birthday_2" class="form-control short ime-off" type="tel" inputmode="tel" onfocus="this.select();" onblur="this.value=toHanKaku(this.value);this.value=zeroPadding(this.value,2)" placeholder="01" maxlength="2" pattern="(?!^00$)^[0-9]{2}$" required />
                 <span class="input-group-text">月</span>
-                <input id="birthday_3" class="form-control short ime-off" type="tel" inputmode="tel" onfocus="this.select();" onblur="this.value=toHanKaku(this.value);this.value=zeroPadding(this.value,2)" placeholder="XX" maxlength="2" pattern="(?!^00$)^[0-9]{2}$" required />
+                <input id="birthday_3" class="form-control short ime-off" type="tel" inputmode="tel" onfocus="this.select();" onblur="this.value=toHanKaku(this.value);this.value=zeroPadding(this.value,2)" placeholder="01" maxlength="2" pattern="(?!^00$)^[0-9]{2}$" required />
                 <span class="input-group-text">日</span>
                 <!--非表示項目-->
                 <input id="Birthday" class="form-control" type=hidden />

@@ -27,7 +27,7 @@ const fieldList = {
 
 // 非公開項目
 const hiddenFieldList = {
-  oid:'00D5D000000A8yu'
+  oid:'00D5D000000A8yu'  // 開発
   ,company:'近畿大学校友会'
 };
 
@@ -35,7 +35,6 @@ const hiddenFieldList = {
 window.onpageshow = function() {
   form.reset();
 }
-
 
 /* ゼロ埋め num:値,len:桁数 */
 function zeroPadding(num,len) {
@@ -112,17 +111,17 @@ function convAddress(str) {
     // 非表示項目に値を設定
     setHiddenField();
     
-    // 物故の非表示項目クリア
+    // 物故の非表示入力項目をクリア
     if(document.getElementById('ChangeContent').value == '物故') {
-      var nonBukkoInputList = document.querySelectorAll('.non-bukko > div > input,.non-bukko > div > select')
+      var nonBukkoInputList = Array.from(document.querySelectorAll('.non-bukko > div > input'));
       for(var i in nonBukkoInputList) {
         nonBukkoInputList[i].value = '';
       }
     }
 
-    // 送付先不要の非表示項目クリア
+    // 送付先不要の非表示入力項目をクリア
     if(document.getElementById('SendingProduct').value == '送付物不要') {
-      var nonSendInputList = document.querySelectorAll('non-send > input,non-send > select')
+      var nonSendInputList = Array.from(document.querySelectorAll('.non-send > div  > input'));
       for(var i in nonSendInputList) {
         nonSendInputList[i].value = '';
       }
@@ -167,7 +166,23 @@ function convAddress(str) {
   document.getElementById('submitButton').addEventListener('click', function(event) {
 
     if(!formValidError()) {
+      
+      // 物故の非表示選択項目をクリア
+      if(document.getElementById('ChangeContent').value == '物故') {
+        var nonBukkoSelectList = Array.from(document.querySelectorAll('.non-bukko > div > select'));
+        for(var i in nonBukkoSelectList) {
+          nonBukkoSelectList[i].value = '';
+        }
+      }
 
+      // 送付先不要の非表示選択項目をクリア
+      if(document.getElementById('SendingProduct').value == '送付物不要') {
+        var nonSendSelectList = Array.from(document.querySelectorAll('.non-send > div > select'));
+        for(var i in nonSendSelectList) {
+          nonSendSelectList[i].value = '';
+        }
+      }
+      
       // 非公開項目を追加
       for(var key in hiddenFieldList) {
         createInputHidden(key, hiddenFieldList[key]);
@@ -204,7 +219,6 @@ function formValidError() {
 
   // 電話番号チェック
   var phone = document.getElementById('phone');
-  console.log(phone.checkValidity());
   if(!document.getElementById('phone').checkValidity()) {
     document.getElementById('phone_1').setCustomValidity(phone.validationMessage);
     document.getElementById('phone_2').setCustomValidity(phone.validationMessage);
@@ -217,7 +231,6 @@ function formValidError() {
 
   // 携帯電話番号チェック
   var mobile = document.getElementById('mobile');
-  console.log(mobile.checkValidity());
   if(!document.getElementById('mobile').checkValidity()) {
     document.getElementById('mobile_1').setCustomValidity(mobile.validationMessage);
     document.getElementById('mobile_2').setCustomValidity(mobile.validationMessage);
